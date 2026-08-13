@@ -11,7 +11,7 @@
 <meta property="og:description" content="Business Guy LLC is a Wyoming limited liability company that builds and operates software products for small businesses and real-estate professionals.">
 <meta property="og:url" content="https://business-guy-llc.github.io/">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%2314507a%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Arial%27 font-size=%2714%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27%3EBG%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230d1420%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Georgia%27 font-size=%2714%27 font-weight=%27bold%27 fill=%27%23d4a843%27 text-anchor=%27middle%27%3EBG%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,68 +42,141 @@
 }
 </script>
 <style>
-  :root{--ink:#1d232b;--muted:#5b6672;--line:#e3e7ec;--accent:#14507a;--bg:#ffffff;--soft:#f6f8fa}
+  :root{
+    --bg:#0d1420; --bg-soft:#121b2a; --ink:#ece7dd; --muted:#a2abba;
+    --gold:#d4a843; --gold-soft:#e0bc6a; --line:#243349; --line-gold:#54431f;
+  }
+  @media (prefers-color-scheme: light){
+    :root{--bg:#faf7f1; --bg-soft:#f1ece2; --ink:#1a2332; --muted:#5a6474;
+          --gold:#8a6a1f; --gold-soft:#6e5518; --line:#ddd5c6; --line-gold:#c9b98d}
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg)}
-  header,main,footer{max-width:760px;margin:0 auto;padding:0 24px}
-  header{padding-top:64px;padding-bottom:28px;border-bottom:1px solid var(--line)}
-  .wordmark{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-  h1{font-size:34px;line-height:1.2;margin-top:14px;font-weight:600}
-  .tagline{color:var(--muted);margin-top:10px;font-size:18px}
-  main{padding:36px 24px 12px}
-  h2{font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:34px 0 10px}
-  p{margin:0 0 14px}
-  ul{margin:0 0 14px 20px}
-  li{margin-bottom:8px}
-  .card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:8px 0 4px}
-  a{color:var(--accent)}
-  footer{padding:28px 24px 56px;border-top:1px solid var(--line);margin-top:44px;color:var(--muted);font-size:14px;font-family:Arial,Helvetica,sans-serif}
-  footer nav{margin-bottom:10px}
-  footer nav a{margin-right:18px;display:inline-block;padding:4px 0;line-height:1.5}
-  @media (prefers-color-scheme: dark){
-    :root{--ink:#e8ebef;--muted:#9aa5b1;--line:#2a323c;--accent:#7fb3d9;--bg:#14181d;--soft:#1b2129}
+  body{
+    font:17px/1.7 'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+    color:var(--ink); background:var(--bg); min-height:100vh;
+    background-image:
+      radial-gradient(1100px 600px at 80% -10%, rgba(212,168,67,.07), transparent 60%),
+      repeating-linear-gradient(90deg, transparent 0 119px, rgba(120,140,170,.05) 119px 120px);
+  }
+  .shell{max-width:940px;margin:0 auto;padding:0 28px}
+  .top{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+  .wordmark{font-family:'Cascadia Code',Consolas,'Courier New',monospace;font-size:13px;letter-spacing:.22em;color:var(--gold);text-decoration:none;text-transform:uppercase}
+  .top nav{display:flex;gap:26px}
+  .top nav a{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;letter-spacing:.08em;color:var(--muted);text-decoration:none;display:inline-block;padding:6px 0;line-height:1.5}
+  .top nav a:hover{color:var(--gold)}
+  .hero{padding:110px 0 90px}
+  .eyebrow{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
+  .eyebrow::before{content:"";display:inline-block;width:44px;height:1px;background:var(--gold);vertical-align:middle;margin-right:14px}
+  h1{font-size:clamp(36px,6vw,58px);line-height:1.12;font-weight:600;letter-spacing:-.01em;max-width:16ch}
+  h1 em{font-style:italic;color:var(--gold-soft)}
+  .lede{margin-top:28px;font-size:19px;color:var(--muted);max-width:52ch}
+  section{padding:64px 0 8px;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:22px}
+  .sec-num{font-family:'Cascadia Code',Consolas,monospace;font-size:13px;color:var(--gold);letter-spacing:.1em}
+  h2{font-size:14px;font-family:'Cascadia Code',Consolas,monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  section p{margin:0 0 16px;max-width:68ch}
+  a{color:var(--gold-soft)}
+  a:hover{color:var(--gold)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0 44px}
+  .card{border:1px solid var(--line);background:var(--bg-soft);padding:26px 24px;position:relative}
+  .card::before{content:"";position:absolute;top:-1px;left:-1px;width:38px;height:38px;
+        border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+  .card h3{font-size:20px;font-weight:600;margin-bottom:10px}
+  .card p{font-size:15.5px;color:var(--muted);margin:0}
+  .card .tag{font-family:'Cascadia Code',Consolas,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+  .company{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0 44px}
+  .fact{border-left:2px solid var(--line-gold);padding:6px 0 6px 20px}
+  .fact .k{font-family:'Cascadia Code',Consolas,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+  .fact .v{font-size:16.5px}
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 64px;
+         display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center}
+  footer nav{display:flex;gap:22px}
+  footer nav a{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;letter-spacing:.08em;color:var(--muted);text-decoration:none;display:inline-block;padding:4px 0;line-height:1.5}
+  footer nav a:hover{color:var(--gold)}
+  footer nav a[aria-current="page"]{color:var(--gold)}
+  .fine{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;color:var(--muted);letter-spacing:.04em}
+  @media (prefers-reduced-motion: no-preference){
+    .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+  @media (max-width:640px){
+    .company{grid-template-columns:1fr}
+    .hero{padding:70px 0 60px}
+    .top nav{gap:16px}
   }
 </style>
 </head>
 <body>
-<header>
-  <div class="wordmark">Business Guy LLC</div>
-  <h1>Software for small businesses and real-estate professionals.</h1>
-  <p class="tagline">A Wyoming limited liability company, in good standing since 2023.</p>
-</header>
-<main>
-  <h2>What we do</h2>
-  <p>Business Guy LLC designs, builds, and operates software products that help small businesses and
-  real-estate professionals communicate with their customers and manage their workflows. Our products
-  include automated deal-intake and email tools for real-estate investors, and
-  <a href="https://serviceblue.app">Service&nbsp;Blue</a>, an AI phone receptionist for home-service
-  businesses, operated under our registered trade name.</p>
+<div class="shell">
+  <header class="top">
+    <a class="wordmark" href="./">Business Guy LLC</a>
+    <nav>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./terms.html">Terms</a>
+    </nav>
+  </header>
 
-  <h2>Our applications and your data</h2>
-  <p>Some of our applications connect to third-party services — including Google services — with the
-  account holder's explicit authorization, in order to send and organize email and manage business
-  workflows on that user's behalf. We access only the data each application needs to do its job, we do
-  not sell personal data, and our use of information received from Google APIs adheres to the
-  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User
-  Data Policy</a>, including its Limited Use requirements. Details are in our
-  <a href="./privacy.html">Privacy&nbsp;Policy</a>.</p>
-
-  <h2>Company</h2>
-  <div class="card">
-    <p><strong>Business Guy LLC</strong><br>
-    A Wyoming limited liability company<br>
-    1309 Coffeen Avenue STE 1200<br>
-    Sheridan, WY 82801, United States</p>
-    <p>Contact: <a href="mailto:thebusinessguy77@gmail.com" aria-label="Email Business Guy LLC at thebusinessguy77@gmail.com">thebusinessguy77@gmail.com</a></p>
+  <div class="hero">
+    <div class="eyebrow rise d1">Wyoming LLC · Est. 2023</div>
+    <h1 class="rise d2">Software that runs the <em>front office</em> for small business.</h1>
+    <p class="lede rise d3">Business Guy LLC designs, builds, and operates software products that help
+    small businesses and real-estate professionals communicate with their customers and manage their
+    workflows.</p>
   </div>
-</main>
-<footer>
-  <nav>
-    <a href="./" aria-current="page">Home</a>
-    <a href="./privacy.html">Privacy Policy</a>
-    <a href="./terms.html">Terms of Service</a>
-  </nav>
-  <div>© 2026 Business Guy LLC. All rights reserved.</div>
-</footer>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>What we build</h2></div>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">Voice · AI</span>
+        <h3>Service Blue</h3>
+        <p>An AI phone receptionist for home-service businesses — answers, books, and follows up so
+        crews can stay on the job. Operated under our registered trade name at
+        <a href="https://serviceblue.app">serviceblue.app</a>.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Real Estate · Automation</span>
+        <h3>Deal-intake &amp; email tools</h3>
+        <p>Automated deal-intake, buyer matching, and email workflow tools for real-estate investors —
+        structured pipelines instead of lost messages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Applications &amp; your data</h2></div>
+    <p>Some of our applications connect to third-party services — including Google services — with the
+    account holder's explicit authorization, in order to send and organize email and manage business
+    workflows on that user's behalf. We access only the data each application needs to do its job, we do
+    not sell personal data, and our use of information received from Google APIs adheres to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User
+    Data Policy</a>, including its Limited Use requirements. Details are in our
+    <a href="./privacy.html">Privacy&nbsp;Policy</a>.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Company</h2></div>
+    <div class="company">
+      <div class="fact"><span class="k">Legal entity</span>
+        <span class="v">Business Guy LLC — a Wyoming limited liability company</span></div>
+      <div class="fact"><span class="k">Principal office</span>
+        <span class="v">1309 Coffeen Avenue STE 1200<br>Sheridan, WY 82801, United States</span></div>
+      <div class="fact"><span class="k">Contact</span>
+        <span class="v"><a href="mailto:thebusinessguy77@gmail.com" aria-label="Email Business Guy LLC at thebusinessguy77@gmail.com">thebusinessguy77@gmail.com</a></span></div>
+      <div class="fact"><span class="k">Standing</span>
+        <span class="v">Active &amp; in good standing since 2023</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="./" aria-current="page">Home</a>
+      <a href="./privacy.html">Privacy Policy</a>
+      <a href="./terms.html">Terms of Service</a>
+    </nav>
+    <div class="fine">© 2026 Business Guy LLC. All rights reserved.</div>
+  </footer>
+</div>
 </body>
 </html>
