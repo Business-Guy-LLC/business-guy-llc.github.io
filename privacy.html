@@ -19,7 +19,7 @@
   }
   @media (prefers-color-scheme: light){
     :root{--bg:#faf7f1; --bg-soft:#f1ece2; --ink:#1a2332; --muted:#5a6474;
-          --gold:#8a6a1f; --gold-soft:#6e5518; --line:#ddd5c6; --line-gold:#c9b98d}
+          --gold:#7a5c1a; --gold-soft:#6e5518; --line:#ddd5c6; --line-gold:#c9b98d}
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
@@ -31,10 +31,10 @@
   }
   .shell{max-width:820px;margin:0 auto;padding:0 28px}
   .top{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
-  .wordmark{font-family:'Cascadia Code',Consolas,'Courier New',monospace;font-size:13px;letter-spacing:.22em;color:var(--gold);text-decoration:none;text-transform:uppercase}
+  .wordmark{display:inline-block;padding:5px 0;font-family:'Cascadia Code',Consolas,'Courier New',monospace;font-size:13px;letter-spacing:.22em;color:var(--gold);text-decoration:none;text-transform:uppercase}
   .top nav{display:flex;gap:26px}
   .top nav a{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;letter-spacing:.08em;color:var(--muted);text-decoration:none;display:inline-block;padding:6px 0;line-height:1.5}
-  .top nav a:hover{color:var(--gold)}
+  .top nav a:hover,.top nav a:focus-visible{color:var(--gold)}
   .doc-head{padding:64px 0 34px;border-bottom:1px solid var(--line)}
   .eyebrow{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
   .eyebrow::before{content:"";display:inline-block;width:44px;height:1px;background:var(--gold);vertical-align:middle;margin-right:14px}
@@ -46,7 +46,7 @@
   ul{padding-left:22px}
   li{margin-bottom:8px}
   a{color:var(--gold-soft)}
-  a:hover{color:var(--gold)}
+  a:hover,a:focus-visible{color:var(--gold)}
   .callout{border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--bg-soft);
            padding:18px 22px;margin:20px 0;max-width:70ch}
   .callout p{margin:0}
@@ -54,17 +54,17 @@
          display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center}
   footer nav{display:flex;gap:22px}
   footer nav a{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;letter-spacing:.08em;color:var(--muted);text-decoration:none;display:inline-block;padding:4px 0;line-height:1.5}
-  footer nav a:hover{color:var(--gold)}
-  footer nav a[aria-current="page"]{color:var(--gold)}
+  footer nav a:hover,footer nav a:focus-visible{color:var(--gold)}
+  footer nav a[aria-current="page"],.top nav a[aria-current="page"]{color:var(--gold)}
   .fine{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;color:var(--muted);letter-spacing:.04em}
 </style>
 </head>
 <body>
 <div class="shell">
   <header class="top">
-    <a class="wordmark" href="./">Business Guy LLC</a>
-    <nav>
-      <a href="./privacy.html">Privacy</a>
+    <a class="wordmark" href="./" aria-label="Business Guy LLC">Business Guy LLC</a>
+    <nav aria-label="Primary">
+      <a href="./privacy.html" aria-current="page">Privacy</a>
       <a href="./terms.html">Terms</a>
     </nav>
   </header>
@@ -152,7 +152,7 @@
 </main>
 
   <footer>
-    <nav>
+    <nav aria-label="Footer">
       <a href="./">Home</a>
       <a href="./privacy.html" aria-current="page">Privacy Policy</a>
       <a href="./terms.html">Terms of Service</a>
