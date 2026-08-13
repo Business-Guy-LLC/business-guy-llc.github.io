@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Business Guy LLC",
+  "legalName": "Business Guy LLC",
+  "url": "https://helloimdeshawn-debug.github.io/businessguy-llc/",
+  "email": "thebusinessguy77@gmail.com",
+  "description": "Business Guy LLC is a Wyoming limited liability company that designs, builds, and operates software products for small businesses and real-estate professionals, including automated deal-intake and email tools for real-estate investors and Service Blue, an AI phone receptionist for home-service businesses.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1309 Coffeen Avenue STE 1200",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "thebusinessguy77@gmail.com"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Service Blue",
+    "url": "https://serviceblue.app"
+  }
+}
